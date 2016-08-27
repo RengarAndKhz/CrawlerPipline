@@ -258,8 +258,7 @@ public class PubMedLibrary extends LibraryBase implements Library {
 	 * @param end_date
 	 * @return
 	 */
-	public int batchDownload(Date start_date, Date end_date,
-			boolean force_update) {
+	public int batchDownload(Date start_date, Date end_date, boolean force_update) {
 		String start_date_str = PubMedRetriever.dateFormat.format(start_date);
 		String end_date_str = PubMedRetriever.dateFormat.format(end_date);
 		logger.info("Start downloading from " + start_date_str + " to "
