@@ -2,6 +2,7 @@ import edu.mcw.rgd.common.utils.FileList;
 import edu.mcw.rgd.nlp.utils.Library;
 import edu.mcw.rgd.nlp.utils.LibraryBase;
 import edu.mcw.rgd.nlp.utils.ncbi.PubMedDocSet;
+import org.apache.log4j.BasicConfigurator;
 
 import java.io.File;
 import java.text.DateFormat;
@@ -27,6 +28,8 @@ public class NewPubMedLibrary extends LibraryBase implements Library{
 
     public static final String HBASE_NAME = "pubmed";
 
+    public String result;
+
     public int batchDownload(long start_id, long end_id, boolean force_update) {
         logger.info("Start downloading from PMID " + start_id + " to PMID"
                 + end_id);
@@ -36,6 +39,7 @@ public class NewPubMedLibrary extends LibraryBase implements Library{
         while (start_id <= end_id) {
             try {
                 String file_name = getFileNameByID(start_id);
+                System.out.println(file_name);
                 logger.info("Downloading " + file_name);
                 if (force_update) {
                     fileList.removeFile(file_name);
@@ -110,7 +114,7 @@ public class NewPubMedLibrary extends LibraryBase implements Library{
     private void crawlDateChunk(String file_name, String file_path, String ids)
             throws Exception {
         NewPubMedRetriever retriever = new NewPubMedRetriever();
-        String result = retriever.crawlByIdList(ids);
+        result = retriever.crawlByIdList(ids);
         if (result != null) {
             if (result.length() > 0) {
                 PubMedDocSet docSet = new PubMedDocSet();
@@ -193,8 +197,9 @@ public class NewPubMedLibrary extends LibraryBase implements Library{
     }
 
     public static void main(String[] args){
+        BasicConfigurator.configure();
         NewPubMedLibrary newPubMedLibrary = new NewPubMedLibrary();
-        newPubMedLibrary.batchDownload(27614362, 27614324, true);
+        newPubMedLibrary.batchDownload(27614324, 27614327, true);
     }
 
 }
