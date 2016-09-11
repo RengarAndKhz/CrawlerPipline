@@ -7,10 +7,104 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/dom4j-1.6.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/commons-logging-1.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/httpcore-4.4.5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/lib/java" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="file://$MODULE_DIR$/lib/java/apache-log4j-1.2.16/site/apidocs" />
+          <root url="file://$MODULE_DIR$/lib/java/commons-cli-1.2/apidocs" />
+          <root url="file://$MODULE_DIR$/lib/java/commons-codec-1.8/apidocs" />
+          <root url="file://$MODULE_DIR$/lib/java/commons-collections-3.2.1/apidocs" />
+          <root url="file://$MODULE_DIR$/lib/java/commons-dbcp-1.4/apidocs" />
+          <root url="file://$MODULE_DIR$/lib/java/commons-logging-1.1.1/site/apidocs" />
+          <root url="file://$MODULE_DIR$/lib/java/commons-math-2.2/docs/apidocs" />
+          <root url="file://$MODULE_DIR$/lib/java/commons-pool-1.6/apidocs" />
+          <root url="file://$MODULE_DIR$/lib/java/httpcomponents-client-4.0/javadoc" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/lib/java" />
+          <root url="file://$MODULE_DIR$/lib/java/apache-log4j-1.2.16" />
+          <root url="file://$MODULE_DIR$/lib/java/apache-log4j-1.2.16/contribs/CekiGulcu" />
+          <root url="file://$MODULE_DIR$/lib/java/apache-log4j-1.2.16/contribs/Jamie Tsao" />
+          <root url="file://$MODULE_DIR$/lib/java/apache-log4j-1.2.16/contribs/JimMoore" />
+          <root url="file://$MODULE_DIR$/lib/java/apache-log4j-1.2.16/contribs/ThomasFenner" />
+          <root url="file://$MODULE_DIR$/lib/java/apache-log4j-1.2.16/src/main/java" />
+          <root url="file://$MODULE_DIR$/lib/java/apache-log4j-1.2.16/src/main/javadoc" />
+          <root url="file://$MODULE_DIR$/lib/java/apache-log4j-1.2.16/src/performance/java" />
+          <root url="file://$MODULE_DIR$/lib/java/apache-log4j-1.2.16/tests/src/java" />
+          <root url="file://$MODULE_DIR$/lib/java/commons-math-2.2/docs/userguide" />
+          <root url="file://$MODULE_DIR$/lib/java/httpcomponents-client-4.0/examples" />
+          <root url="file://$MODULE_DIR$/lib/java/mysql-connector-java-5.0.8/src" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/integration/src/test/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/jcl-over-slf4j/src/main/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/jcl-over-slf4j/src/test/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/jul-to-slf4j/src/main/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/jul-to-slf4j/src/test/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/log4j-over-slf4j/src/main/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/log4j-over-slf4j/src/test/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-api/src/main/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-api/src/test/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-ext/src/main/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-ext/src/test/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-jcl/src/main/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-jcl/src/test/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-jdk14/src/main/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-jdk14/src/test/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-log4j12/src/main/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-log4j12/src/test/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-migrator/src/main/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-migrator/src/test/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-nop/src/main/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-nop/src/test/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-simple/src/main/java" />
+          <root url="file://$MODULE_DIR$/lib/java/slf4j-1.6.1/slf4j-simple/src/test/java" />
+        </SOURCES>
+        <jarDirectory url="file://$MODULE_DIR$/lib/java" recursive="false" />
+        <jarDirectory url="file://$MODULE_DIR$/lib/java" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/log4j-1.2.16.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/httpclient-4.3-beta1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -1,3 +1,5 @@
+import edu.mcw.rgd.nlp.utils.Crawler;
+import edu.mcw.rgd.nlp.utils.CrawlerBase;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -26,25 +28,26 @@ import static org.apache.http.HttpHeaders.USER_AGENT;
 /**
  * Created by wangt on 8/21/2016.
  */
-public final class NewPubMedRetriever {
+public final class NewPubMedRetriever{
     public static final DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
     public static final String DB_NAME = "pubmed";
     public static final String BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
-    public static final int ID_CHUNKSIZE = 1000;
+    public static final int ID_TRUNK_SIZE = 1000;
     protected final String retmax = "999999";
-
+    public String result;
 
     protected String today;
     protected String usehistory;
     protected String reldate;
 
     /**
-     * did nothing, just uesd to fit with PubMedLibrary
+     * did nothing
      */
     public void initialize(){
         Date date = new Date();
         today = dateFormat.format(date);
     }
+
 
     /**
      * url exampel:
@@ -111,7 +114,7 @@ public final class NewPubMedRetriever {
         return result.toString();
     }
 
-    public String crawByDate(Date date) throws Exception{
+    public String crawlByDate(Date date) throws Exception{
         String theDate = dateFormat.format(date);
         String[] idList = getIdSetByDate(theDate, "edat");
         StringBuilder ids = new StringBuilder();
@@ -135,7 +138,7 @@ public final class NewPubMedRetriever {
 
     private String getIDStr(long start_id){
         StringBuilder ids = new StringBuilder();
-        for (int i = 0; i < ID_CHUNKSIZE; i++){
+        for (int i = 0; i < ID_TRUNK_SIZE; i++){
             ids.append(String.format("%d,", start_id+i));
         }
         ids.delete(ids.length()-1, ids.length());
@@ -191,6 +194,7 @@ public final class NewPubMedRetriever {
         }
         return return_set;
     }
+
 
     public static void main(String[] args){
 
