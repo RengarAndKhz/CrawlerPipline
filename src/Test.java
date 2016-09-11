@@ -30,11 +30,11 @@ public class Test {
         }
     }
 
-    public static void main(String[] args){
-
-
-
-
+    public static void main(String[] args) throws Exception{
+        String filePath = "C:\\Users\\wangt\\Desktop\\00027614";
+        BufferedWriter e = new BufferedWriter(new FileWriter(filePath));
+        e.write("abc");
+        e.close();
     }
 
 
