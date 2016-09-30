@@ -1,0 +1,1 @@
+0 18 * * * cd (path of the jar file) && java -jar CrawlerPipline.jar (path) (index or date) (force?) (index or date)

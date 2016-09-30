@@ -1342,9 +1342,10 @@ private static void getDates(String[] args, int startPos, Date startDateIn, Date
         System.out.print("(1 for crawling by index, 2 for crawling by date) ");
         System.out.print("(Force update(Y/N)) ");
         System.out.println("(if 1: start index end index if 2: start date end date (yyyy/MM/dd)) ");
-        Scanner read = new Scanner(System.in);
-        String argument = read.nextLine();
-        arguments = argument.split(" ");
+        //Scanner read = new Scanner(System.in);
+        //String argument = read.nextLine();
+        //arguments = argument.split(" ");
+        arguments = args;
         NewPubMedLibrary newPubMedLibrary = new NewPubMedLibrary();
         newPubMedLibrary.setPathDoc(arguments[0]);
         String forceUpdate = arguments[2];
