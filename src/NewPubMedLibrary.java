@@ -11,10 +11,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * Created by wangt on 9/11/2016.
@@ -1296,12 +1295,93 @@ private static void getDates(String[] args, int startPos, Date startDateIn, Date
 
 
  */
-    public static void main(String[] args){
-        BasicConfigurator.configure();
+    public static void main(String[] args) {
+        /*BasicConfigurator.configure();
+        System.out.print("Type the path to store the XML: ");
+        Scanner read = new Scanner(System.in);
+        String path = read.next();
         NewPubMedLibrary newPubMedLibrary = new NewPubMedLibrary();
-        newPubMedLibrary.setPathDoc("C:\\Users\\wangt\\Desktop");;
-        Date date = new Date();
-        newPubMedLibrary.batchDownload(27614327, 27614338, false);
+        newPubMedLibrary.setPathDoc(path);
+        System.out.print("Type 1 for crawling by index, 2 for crawling by data: ");
+        String flag = read.next();
+        System.out.print("Force update? Y/N: ");
+        String forceUpdate = read.next();
+        //System.out.print(flag);
+        if (flag.equals("1")){
+            System.out.print("start index: ");
+            String startIndex = read.next();
+            System.out.print("end index: ");
+            String endIndex = read.next();
+            newPubMedLibrary.batchDownload(Long.parseLong(startIndex), Long.parseLong(endIndex), forceUpdate.equals("Y"));
+        }
+        else{
+            System.out.print("start date as yyyy/MM/dd: ");
+            String startDate = read.next();
+            System.out.print("end date as yyyy/MM/dd: ");
+            String endDate = read.next();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+            Date start = null;
+            try {
+                start = dateFormat.parse(startDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            Date end = null;
+            try {
+                end = dateFormat.parse(endDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            newPubMedLibrary.batchDownload(start, end, forceUpdate.equals("Y"));
+
+        }*/
+        BasicConfigurator.configure();
+        String[] arguments;
+        System.out.print("arguments should be split by empty blank ");
+        System.out.print("(full path of the file to store the XML) ");
+        System.out.print("(1 for crawling by index, 2 for crawling by date) ");
+        System.out.print("(Force update(Y/N)) ");
+        System.out.println("(if 1: start index end index if 2: start date end date (yyyy/MM/dd)) ");
+        Scanner read = new Scanner(System.in);
+        String argument = read.nextLine();
+        arguments = argument.split(" ");
+        NewPubMedLibrary newPubMedLibrary = new NewPubMedLibrary();
+        newPubMedLibrary.setPathDoc(arguments[0]);
+        String forceUpdate = arguments[2];
+        if (arguments[1].equals("1")){
+            String startIndex = arguments[3];
+            String endIndex = arguments[4];
+            newPubMedLibrary.batchDownload(Long.parseLong(startIndex), Long.parseLong(endIndex), forceUpdate.equals("Y"));
+        }
+        else{
+            String startDate = arguments[3];
+            String endDate = arguments[4];
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+            Date start = null;
+            try {
+                start = dateFormat.parse(startDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            Date end = null;
+            try {
+                end = dateFormat.parse(endDate);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            newPubMedLibrary.batchDownload(start, end, forceUpdate.equals("Y"));
+
+        }
+
+
+
+
+
+
+
+        //Date date = new Date(116,8,1);
+
+        //newPubMedLibrary.batchDownload(date, date, false);
     }
 /*
     public static enum OutputType {
