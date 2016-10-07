@@ -108,7 +108,7 @@ public class PubmedParser {
         }
         return res;
     }
-    public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
+    /*public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(new File("/Users/Tianyang/CS545/CrawlerPipline/00000011.xml")));
         StringBuilder sb = new StringBuilder();
         String line;
@@ -117,5 +117,5 @@ public class PubmedParser {
         }
         PubmedParser pubmedParser = new PubmedParser(sb.toString());
         pubmedParser.parser();
-    }
+    }*/
 }
