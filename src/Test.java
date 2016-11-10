@@ -4,6 +4,8 @@ import org.apache.log4j.Logger;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 
 /**
@@ -31,10 +33,9 @@ public class Test {
     }
 
     public static void main(String[] args) throws Exception{
-        String filePath = "C:\\Users\\wangt\\Desktop\\00027614";
-        BufferedWriter e = new BufferedWriter(new FileWriter(filePath));
-        e.write("abc");
-        e.close();
+        for (String line : Files.readAllLines(Paths.get("/Users/Tianyang/CS545/CrawlerPipline/tags.txt"))){
+            System.out.println(line);
+        }
     }
 
 
